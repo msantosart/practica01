@@ -1,0 +1,44 @@
+<!DOCTYPE html><!--Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this licenseClick nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template-->
+
+<html xmlns:th="http://www.thymeleaf.org">    
+   
+    <head th:replace="../static/index.html"></head>  
+
+    <body>         
+        <div class="container">            
+            <div class="card-header bg-black text-white"> </div>            
+            <div class="card-body">                
+                <!-------------------Esto es un Formulario--------------- -->                
+                <div class="container">                    
+                    <form th:object = "${estado}" th:action="@{/save}" method="POST">                        
+                        <input type="hidden" th:field="*{country_id}">                        
+                        <div class="form-group mb-3 row">                            
+                            <label class="col-md-2 col-form-label" for="country_name">Nombre</label>                            
+                            <div class="col-sm-10">                                
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{country_name}"  placeholder= "Nombre Pais" id="nombres" aria-describedby="emailHelp">                            
+                            </div>                        </div>                        
+                        <div class="form-group mb-3 row">                            
+                            <label  class="form-control-sm col-md-2  col-form-label" for="phone_code">Cod Telefonico</label>                            
+                            <div class="col-sm-10">                                
+                                <input type="text" th:field="*{phone_code}" class="form-control form-control-sm col-md-6" placeholder= "Cod Telefonico" id="phone_code" aria-describedby="emailHelp"> 
+                            </div>                        
+                        </div>                        
+                        <div class="form-group mb-3 row">                            
+                            <label  class="form-control-sm col-form-label col-md-2" for="country_code">Cod Pais</label>                            
+                            <div class="col-sm-10">                                
+                                <input type="text" th:field="*{country_code}" class="form-control form-control-sm col-md-6" placeholder= "Cod Pais" id="country_code" aria-describedby="emailHelp"> 
+                            </div>                        
+                        </div>                        
+                        <div class="form-group mb-3 row">                            
+                            <label  class="form-control-sm col-form-label col-md-2" for="capital">Capital</label>                            
+                            <div class="col-sm-10">                                
+                                <input type="text" th:field="*{capital}" class="form-control form-control-sm col-md-6" placeholder= "Capital" id="capital" aria-describedby="emailHelp">                            </div>                        
+                        </div>                        
+                     
+                        <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>                    
+                    </form>                
+                </div>            
+            </div>        
+        </div>    
+    </body>
+</html>
